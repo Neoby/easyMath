@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package easymat;
+package easyMath;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -16,10 +16,10 @@ import nButton.NButton;
  *
  * @author Enrico
  */
-public class EasyMat extends JFrame{
+public class EasyMath extends JFrame{
     Launcher launcher;
 
-    public EasyMat() {
+    public EasyMath() {
         
         launcher = new Launcher();
         initComponents();
@@ -32,7 +32,7 @@ public class EasyMat extends JFrame{
     
     public static void main(String[] args) {
         // TODO code application logic here
-        new EasyMat();
+        new EasyMath();
         
     }
     
