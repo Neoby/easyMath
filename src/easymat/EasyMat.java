@@ -18,10 +18,7 @@ import nButton.NButton;
  */
 public class EasyMat extends JFrame{
     Launcher launcher;
-    /**
-     * @param args the command line arguments
-     */
-    
+
     public EasyMat() {
         
         launcher = new Launcher();
@@ -29,6 +26,9 @@ public class EasyMat extends JFrame{
     }
     
     
+    /**
+     * @param args the command line arguments
+     */
     
     public static void main(String[] args) {
         // TODO code application logic here

@@ -65,6 +65,14 @@ public class CalcMatrix {
         new CalcMatrix(true, true,true, true, 9,4);      
     }
     
+    /** Generate a new Calculation Matrix.
+     *  <P>This will be the 'seed' with witch CalcGenerator will create a new 
+     *  calc.</P>
+     * 
+     *  <P><b>Warning! </b>At least <b>one sign-parm must be true</b>, otherwise the Matrix will be
+     *  considerated INVALID</P>
+     *  
+     */
     public CalcMatrix(boolean ALLOW_SUMS, boolean ALLOW_SUBTRACTIONS,boolean ALLOW_MOLTIPLICATIONS, boolean ALLOW_DIVISIONS, int maxOperands,int maxOperators){
         this.op_enabled=0;
         
@@ -78,7 +86,7 @@ public class CalcMatrix {
         int i=0;
         
         if(ALLOW_MOLTIPLICATIONS)operands[i++]='*';
-        if(ALLOW_DIVISIONS)operands[i++]='/';
+        if(ALLOW_DIVISIONS)operands[i++]=':';
         if(ALLOW_SUMS)operands[i++]='+';
         if(ALLOW_SUBTRACTIONS)operands[i++]='-';
         
@@ -122,7 +130,7 @@ public class CalcMatrix {
     
     
     /**
-     * Set the maximal operators on a calculation
+     * Set the maximal number of operators on a calculation
      * @param maxOperators the maximal operators on a sigle calculation
      */
     public void setMaxOperators(int maxOperators){
