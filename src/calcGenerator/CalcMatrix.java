@@ -96,6 +96,8 @@ public class CalcMatrix {
         
         if(op_enabled==0){
             this.valid = false;
+            System.err.println("No valid operands found");
+            System.exit(0);
         }
         else {
             this.valid=true;

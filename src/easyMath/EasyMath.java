@@ -9,7 +9,7 @@ package easyMath;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
-import launcher.Launcher;
+import load.Load;
 import nButton.NButton;
 
 /**
@@ -17,11 +17,11 @@ import nButton.NButton;
  * @author Enrico
  */
 public class EasyMath extends JFrame{
-    Launcher launcher;
+    Load launcher;
 
     public EasyMath() {
         
-        launcher = new Launcher();
+        launcher = new Load();
         initComponents();
     }
     
@@ -37,17 +37,32 @@ public class EasyMath extends JFrame{
     }
     
     public void initComponents(){
-        this.setSize(new Dimension(320,440));
+        this.setSize(new Dimension(310,450));
         
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Launcher launcher = new Launcher();
+       
         this.setResizable(false);
-        this.add(launcher.getView());
         
-        this.setVisible(true);        
+        Load load = new Load();
+        this.add(load.getView());
+        
+        this.setVisible(true);    
+        
+        load.checkIfDatabaseExists(" ");
+        load.allNestedModels();
+        System.out.println("Load Finish");
+        System.out.println("Let's begin with login!");
+        
     }
+    
+    public boolean userIsOnline(){
+        return true;
+    }
+    
+    
+    
     
 }
