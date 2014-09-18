@@ -8,6 +8,8 @@ package load;
 
 import javax.swing.JPanel;
 import toolBox.SqLite;
+import view.login.LogIn;
+import view.login.ViewCtrl_Int;
 
 /**
  *
@@ -42,12 +44,18 @@ public class Load {
         SqLite.cUpdate("");
         return true;
     }
-    public void allNestedModels(){
-        System.out.println("(TEST)\tLoading...");
-        for (double i =0;i<10;i++){
-            System.out.print("");
-        }
-        System.out.println("(TEST)\tDone....");
+
+    public static final int LOGIN=0;
+    
+    public ViewCtrl_Int[] allViews() {
+        LogIn logIn = new LogIn();
+        
+        ViewCtrl_Int[] viewCtrl = new ViewCtrl_Int[1];
+        
+        viewCtrl[0]=logIn;
+        
+        return viewCtrl;
     }
+    
     
 }
